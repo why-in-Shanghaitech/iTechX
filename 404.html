@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX | 404 Not Found</title>
+
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="layui/css/style.css">
+    <link rel="stylesheet" href="https://itechx.gitee.io/layui/css/layui.css">
+    <link rel="stylesheet" href="https://itechx.gitee.io/layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="">
+                <img src="https://itechx.gitee.io/image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="https://itechx.gitee.io/dashboard">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="https://itechx.gitee.io/help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+
+    <div class="layui-tab-content" style="height: auto;">
+        <h1 style="font-family: Quicksand; font-weight: bold; font-size: 2.5em;">We have migrated to gitee!</h1>
+        <hr>
+
+        <div class="layui-row" style="text-align: center; font-family: Quicksand;  font-size: 1.4em;">
+            <p>
+                Hello! For speed purpose, iTechX has migrated to <a href="https://iTechX.gitee.io">iTechX.gitee.io</a> (maybe permanent).
+            </p>
+            <p>
+                Thank you very much for your support to iTechX! 
+            </p>
+            <p>
+                We'll continue to provide better learning experience.
+            </p>
+            <p>
+                Now, say goodbye to github! Transport will start in <span id="time">15</span> seconds...
+                (<a id="default" href="https://itechx.gitee.io/dashboard">Take me off now</a>).
+            </p>
+        </div>
+
+        <div class="layui-footer" style="margin-top: 2em;">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020-2021 iTechX - MIT license.</p>
+        </div>
+    </div>
+</div>
+
+<script src="https://itechx.gitee.io/layui/layui.js"></script>
+<script>
+    target = location.href.replace("why-in-shanghaitech.github.io/iTechX", "iTechX.gitee.io");
+    document.getElementById("default").href = target;
+    window.onload=function(){
+        s = 15;
+        setInterval(function (){
+            if (s < 0) {
+                document.getElementById("default").click();
+            } else {
+                document.getElementById("time").innerText = s;
+                s -= 1;
+            }
+        },1000);
+    };
+</script>
+
+</body>
+</html>
